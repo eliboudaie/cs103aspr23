@@ -33,7 +33,7 @@ class GPT():
 
     def getResponse(self,prompt):
         ''' Generate a GPT response '''
-        prompt = "Generate a tweet using the information provided: " + prompt
+        prompt = "Generate a funny tweet using the information provided: " + prompt
         completion = openai.Completion.create(
             engine=self.model_engine,
             prompt=prompt,
@@ -46,6 +46,20 @@ class GPT():
         response = completion.choices[0].text
         return response
 
+    def getResponse2(self,prompt):
+            ''' Generate a GPT response '''
+            prompt = "Generate a serious tweet using the information provided: " + prompt
+            completion = openai.Completion.create(
+                engine=self.model_engine,
+                prompt=prompt,
+                max_tokens=1024,
+                n=1,
+                stop=None,
+                temperature=0.8,
+            )
+
+            response = completion.choices[0].text
+            return response
 if __name__=='__main__':
     '''
     '''
