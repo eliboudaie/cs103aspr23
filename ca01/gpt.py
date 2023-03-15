@@ -33,6 +33,7 @@ class GPT():
 
     def getResponse(self,prompt):
         ''' Generate a GPT response '''
+        prompt = "Generate a tweet using the information provided: " + prompt
         completion = openai.Completion.create(
             engine=self.model_engine,
             prompt=prompt,

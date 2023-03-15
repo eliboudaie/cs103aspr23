@@ -94,24 +94,15 @@ def gptdemo():
         prompt = request.form['prompt']
         answer = gptAPI.getResponse(prompt)
         return f'''
-        <div style="text-align: center;">
-        <h1>Tweet Generator</h1>
-        <br>
-        <br>
-        <a href="{url_for('gptdemo')}">Generate your tweets</a>
-        <br>
-        <br>
-        <a href="{url_for('about')}">About this application</a>
-        <br>
-        <br>
-        <a href="{url_for('team')}">Meet the team</a>
-        <br>
-        <br>
-        <a href="{url_for('links')}">Links</a>
-        <br>
-        <img src="{{ url_for('static', filename='image.png') }}" alt="Image">
-    </div>
-    '''
+        <h1>GPT Demo</h1>
+        <pre style="bgcolor:yellow">{prompt}</pre>
+        <hr>
+        Here is the answer in text mode:
+        <div style="border:thin solid black">{answer}</div>
+        Here is the answer in "pre" mode:
+        <pre style="border:thin solid black">{answer}</pre>
+        <a href={url_for('gptdemo')}> make another query</a>
+        '''
     else:
         return '''
         <h1>GPT Demo App</h1>
