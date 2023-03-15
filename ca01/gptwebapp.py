@@ -36,7 +36,15 @@ def index():
         <h1>GPT Demo</h1>
         <a href="{url_for('gptdemo')}">Ask questions to GPT</a>
     '''
-
+#Create an about page
+@app.route('/about')
+def about():
+    ''' display a link to the general query page '''
+    print('processing /about route')
+    return f'''
+        <h1>This application takes an article and turns it into either a funny or professional tweet</h1>
+        <a href="{url_for('gptdemo')}">Ask questions to GPT</a>
+    '''
 
 @app.route('/gptdemo', methods=['GET', 'POST'])
 def gptdemo():
