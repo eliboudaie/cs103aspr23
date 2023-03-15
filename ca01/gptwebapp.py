@@ -35,16 +35,18 @@ def index():
     return f'''
         <h1>GPT Demo</h1>
         <a href="{url_for('gptdemo')}">Ask questions to GPT</a>
+        <a href="{url_for('about')}">About this application</a>
     '''
-#Create an about page
+
 @app.route('/about')
 def about():
-    ''' display a link to the general query page '''
+    ''' display information about the application '''
     print('processing /about route')
-    return f'''
-        <h1>This application takes an article and turns it into either a funny or professional tweet</h1>
-        <a href="{url_for('gptdemo')}">Ask questions to GPT</a>
+    return '''
+        <h1>About</h1>
+        <p>This application takes an article and turns it into either a funny or professional tweet</p>
     '''
+
 
 @app.route('/gptdemo', methods=['GET', 'POST'])
 def gptdemo():
