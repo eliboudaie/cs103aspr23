@@ -33,11 +33,23 @@ def index():
     ''' display a link to the general query page '''
     print('processing / route')
     return f'''
-        <h1>GPT Demo</h1>
-        <a href="{url_for('gptdemo')}">Ask questions to GPT</a>
+        <div style="text-align: center;">
+        <h1>Tweet Generator</h1>
+        <br>
+        <br>
+        <a href="{url_for('gptdemo')}">Generate your tweets</a>
+        <br>
+        <br>
         <a href="{url_for('about')}">About this application</a>
+        <br>
+        <br>
         <a href="{url_for('team')}">Meet the team</a>
+        <br>
+        <br>
         <a href="{url_for('links')}">Links</a>
+        <br>
+        <img src="{{ url_for('static', filename='image.png') }}" alt="Image">
+    </div>
     '''
 
 @app.route('/about')
