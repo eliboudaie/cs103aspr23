@@ -51,7 +51,6 @@ def index():
         <br>
         <a href="{url_for('links')}">Links</a>
         <br>
-        <img src="{{ url_for('static', filename='image.png') }}" alt="Image">
     </div>
     '''
 
