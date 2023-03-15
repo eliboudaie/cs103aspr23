@@ -37,6 +37,7 @@ def index():
         <a href="{url_for('gptdemo')}">Ask questions to GPT</a>
         <a href="{url_for('about')}">About this application</a>
         <a href="{url_for('team')}">Meet the team</a>
+        <a href="{url_for('index')}">Links</a>
     '''
 
 @app.route('/about')
@@ -57,6 +58,17 @@ def team():
         <p>Eli is a senior computer science and business major who worked on the serious tweet feature.</p>
         <h2>Bofan</h2>
         <p>Bofan is a sophomore who worked on the funny tweet feature.</p>
+    '''
+@app.route('/index')
+def index():
+    ''' display links to team members' pages '''
+    print('processing /index route')
+    return '''
+        <h1>Links</h1>
+        <ul>
+            <li><a href="https://github.com/eliboudaie/ ">Eli</a></li>
+            <li><a href="https://github.com/felixc5">Bofan</a></li>
+        </ul>
     '''
 
 
