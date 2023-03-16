@@ -32,26 +32,49 @@ app.secret_key = b'_5#y2L"F4Q789789uioujkkljkl...8z\n\xec]/'
 def index():
     ''' display a link to the general query page '''
     print('processing / route')
-    return f'''
-        <div style="text-align: center;">
-        <h1>Tweet Generator</h1>
-        <br>
-        <br>
-        <a href="{url_for('funnytweet')}">Generate your funny tweets</a>
-        <br>
-        <br>
-         <a href="{url_for('serioustweet')}">Generate your serious tweets</a>
-        <br>
-        <br>
-        <a href="{url_for('about')}">About this application</a>
-        <br>
-        <br>
-        <a href="{url_for('team')}">Meet the team</a>
-        <br>
-        <br>
-        <a href="{url_for('links')}">Links</a>
-        <br>
-    </div>
+    return '''
+        <html>
+            <head>
+                <title>Tweet Generator</title>
+                <style>
+                    body {
+                        background-color: #f5f5f5;
+                        font-family: Arial, sans-serif;
+                    }
+                    h1 {
+                        font-size: 36px;
+                        color: #333333;
+                        margin-top: 50px;
+                    }
+                    .button {
+                        background-color: #4CAF50;
+                        border: none;
+                        color: white;
+                        padding: 16px 32px;
+                        text-align: center;
+                        text-decoration: none;
+                        display: inline-block;
+                        font-size: 24px;
+                        margin: 20px;
+                        cursor: pointer;
+                        border-radius: 8px;
+                    }
+                    .button:hover {
+                        background-color: #3e8e41;
+                    }
+                </style>
+            </head>
+            <body>
+                <div style="text-align: center;">
+                    <h1>Tweet Generator</h1>
+                    <a href="/funnytweet" class="button">Generate your funny tweets</a>
+                    <a href="/serioustweet" class="button">Generate your serious tweets</a>
+                    <a href="/about" class="button">About this application</a>
+                    <a href="/team" class="button">Meet the team</a>
+                    <a href="/links" class="button">Links</a>
+                </div>
+            </body>
+        </html>
     '''
 
 @app.route('/about')
