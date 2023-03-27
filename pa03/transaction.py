@@ -21,8 +21,6 @@ class Transaction:
                             VALUES (?, ?, ?, ?, ?)''', (item_num, amount, category, date, description))
         self.conn.commit()
 
-<<<<<<< Updated upstream
-=======
     def get_categories(self):
         self.cursor.execute('''SELECT DISTINCT category FROM transactions''')
         rows = self.cursor.fetchall()
@@ -31,7 +29,6 @@ class Transaction:
     def modify_category(self, old, new):
         self.cursor.execute('''UPDATE transactions SET category=? WHERE category=?''', (new, old))
 
->>>>>>> Stashed changes
     def get_transactions(self):
         self.cursor.execute('''SELECT * FROM transactions''')
         rows = self.cursor.fetchall()
