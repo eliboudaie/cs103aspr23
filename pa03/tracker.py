@@ -70,8 +70,11 @@ def modify_category(transaction):
 
 def show_transactions(transaction):
     transactions = transaction.get_transactions()
-    for row in transactions:
-        print(row)
+    if not transactions:
+        print("no transaction recorded")
+    else:
+        for row in transactions:
+            print(row)
 
 def add_transaction(transaction):
     item_num = int(input("Enter item number: "))

@@ -81,3 +81,16 @@ def test_get_transaction_by_id(db):
   assert row[5] == 'Lunch'
   cursor.close()
   conn.close()
+
+def test_get_categories(db):
+  t = Transaction(db)
+  t.create_table()
+  t.add_transaction(1, 10.0, 'Food', '2022-03-15', 'Lunch')
+  t.add_transaction(2, 20.0, 'Transportation', '2022-03-15', 'Taxi')
+  conn = t.conn
+  cursor = t.cursor
+  rows = t.get_categories()()
+  assert row[1] == 'Food'
+  assert row[2] == 'Transportation'
+  cursor.close()
+  conn.close()
